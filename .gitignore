@@ -1,5 +1,11 @@
 .idea
 *.sqlite3
 venv
-gestao_rh/
+gestao_rh/manage.py
+gestao_rh/__init__.py
+gestao_rh/asgi.py
+gestao_rh/urls.py
+gestao_rh/wsgi.py
+gestao_rh/__pycache__/
 *.pyc
+*.png
