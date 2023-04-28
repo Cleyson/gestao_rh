@@ -12,9 +12,9 @@ SECRET_KEY = 'django-insecure-gh&af1jrxt=-_i!#h16y%pzfx)0%9g8-n00!&bi7#=cq#ly0-d
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
 # Application definition
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
