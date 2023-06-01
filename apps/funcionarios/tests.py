@@ -1,37 +1,14 @@
-from django.test import TestCase
+from newsapi import NewsApiClient
 
-class Programa:
+newsapi = NewsApiClient(api_key='8f68687695434aa585fde49ffd92944f')
 
-    def __init__(self, nome, ano):
-        self._nome = nome
-        self.ano = ano
-        self._likes = 0
-
-    @property
-    def nome(self):
-        return self._nome
-
-    @property
-    def likes(self):
-        return self._likes
-
-    def dar_like(self):
-        self._likes += 1
-
-
-class Filme(Programa):
-
-    def __init__(self, nome, ano, duracao):
-        super().__init__(nome, ano)
-        self.duracao = duracao
-
-
-class Serie(Programa):
-
-    def __init__(self, nome, ano, temporadas):
-        super().__init__(nome, ano)
-        self.temporadas = temporadas
-
-vingadores = Filme('Vingadores', 2023, 160)
-print(vingadores.nome)
-
+all_articles = newsapi.get_everything(
+        q='bitcoin',
+        sources='globo,info-money',
+        domains='globo.com. informoney.com.br',
+        from_param='2023-04-01',
+        to='2023-04-21',
+        language='pt',
+        sort_by='publishedAt',
+)
+print(all_articles)

@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from django.http import HttpResponse
 
 from django.urls import reverse_lazy
 from django.views.generic import (
@@ -8,7 +7,7 @@ from django.views.generic import (
     DeleteView,
     CreateView
 )
-from .models import Funcionario
+
 from apps.funcionarios.models import Funcionario
 
 class FuncionariosList(ListView):
@@ -31,13 +30,15 @@ class FuncionarioNovo(CreateView):
     model = Funcionario
     fields = ['nome', 'departamento']
 
+
     def form_valid(self, form):
         funcionario = form.save(commit=False)
-        username = funcionario.nome.split(' ')[0] + funcionario.nome.split(' ')[1]
+        username = funcionario.nome.split(' ')[0]
         funcionario.empresa = self.request.user.funcionario.empresa
         funcionario.user = User.objects.create(username=username)
         funcionario.save()
         return super(FuncionarioNovo, self).form_valid(form)
 
 
-
+class DepartamentosList:
+    pass
