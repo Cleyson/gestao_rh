@@ -16,7 +16,7 @@ class DepartamentosList(ListView):
 
 class DepartamentoCreate(CreateView):
     model = Departamento
-    fields =['nome']
+    fields = ['nome']
 
     def form_valid(self, form):
         departamento = form.save(commit=False)
@@ -31,4 +31,3 @@ class DepartamentoUpdate(UpdateView):
 class DepartamentoDelete(DeleteView):
     model = Departamento
     success_url = reverse_lazy('list_departamentos')
-

@@ -2,10 +2,10 @@
 
 {% block main %}
 
-D E L E T A N D O - F U N C I O N Á R I O
+D E L E T A R - H O R A  - E X T R A
 <form method="Post">
     {% csrf_token %}
-    <h1>Você esta certo que quer deletar? {{ obj }} </h1>
+    <h1>Você esta certo que quer deletar hora extra? {{ obj }} </h1>
 
     {{ form }}
     <button type="submit" class="btn btn-danger">Confirmar</button>

@@ -40,5 +40,3 @@ class FuncionarioNovo(CreateView):
         return super(FuncionarioNovo, self).form_valid(form)
 
 
-class DepartamentosList:
-    pass
