@@ -7,6 +7,7 @@ from .models import RegistroHoraExtra
 class RegistroHoraExtraForm(ModelForm):
     def __init__(self, user, *args, **kwargs):
         super(RegistroHoraExtraForm, self).__init__(*args, **kwargs)
+        from apps.funcionarios.models import Funcionario
         self.fields['funcionario'].queyset = Funcionario.objects.filter(
             empresa=user.funcionario.empresa)
 

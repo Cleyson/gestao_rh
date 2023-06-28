@@ -10,6 +10,7 @@ class Funcionario(models.Model):
     user = models.OneToOneField(User, on_delete=models.PROTECT)
     departamento = models.ManyToManyField(Departamento)
     empresa = models.ForeignKey(Empresa, on_delete=models.PROTECT, null=True, blank=True)
+    data_criacao = models.DateTimeField(auto_now_add=True)
 
     def get_absolute_url(self):
         return reverse('list_funcionarios')

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block main %}
-
+    <h2>Listagem de departamentos </h2>
 <br>
     {% for departamento in object_list %}
        <a href="{% url 'update_departamento' departamento.id %}">

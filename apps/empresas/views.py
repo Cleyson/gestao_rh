@@ -10,11 +10,11 @@ class EmpresaCreate(CreateView):
 
 
     def form_valid(self, form):
-        object = form.save()
-        funcionario = self.request.user.funcionario
-        funcionario.empresa = object
-        funcionario.save('none')
-        return HttpResponse('OK')
+            object = form.save()
+            funcionario = self.request.user.funcionario
+            funcionario.empresa = object
+            funcionario.save('none')
+            return HttpResponse('OK')
 
 
 class EmpresaEdit(UpdateView):

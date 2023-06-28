@@ -2,7 +2,7 @@
 
 {% block main %}
 
-Banco de Horas
+    Banco de Horas
 <br>
     {% for registro_re in object_list %}
 
@@ -15,10 +15,9 @@ Banco de Horas
 <br>
     {% endfor %}
 
-    {% if object %}
-<h3>Não existe registro no banco de dados</h3>
+    {% if not object_lit %}
+    <h3>Não existem registros de hora extra no banco de dados</h3>
     {% endif %}
 
-
+    <a href="{% url 'create_registro_hora_extra' %}" class="btn btn-info"> Novo </a>
 {% endblock %}
-
