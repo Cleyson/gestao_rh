@@ -1,14 +1,12 @@
-import form as form
 from django.forms import ModelForm
 from .models import RegistroHoraExtra
-#form apps.funcionarios.models import Funcionario
+from apps.funcionarios.models import Funcionario
 
 
 class RegistroHoraExtraForm(ModelForm):
     def __init__(self, user, *args, **kwargs):
         super(RegistroHoraExtraForm, self).__init__(*args, **kwargs)
-        from apps.funcionarios.models import Funcionario
-        self.fields['funcionario'].queyset = Funcionario.objects.filter(
+        self.fields['funcionario'].queryset = Funcionario.objects.filter(
             empresa=user.funcionario.empresa)
 
 

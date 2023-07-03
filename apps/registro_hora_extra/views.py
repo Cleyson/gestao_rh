@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 
-from .form import RegistroHoraExtraForm
 from .models import RegistroHoraExtra
+from .form import RegistroHoraExtraForm
 from django.views.generic import (
     ListView,
     UpdateView,
