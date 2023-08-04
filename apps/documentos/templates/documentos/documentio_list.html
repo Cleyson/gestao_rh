@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h2>Listagem de deocumento </h2>
+<br>
+    {% for documento in object_list %}
+
+        <a href="{% url 'delete_documento' documento.id %}">
+            Deletar
+
+<br>
+    {% endfor %}
+
