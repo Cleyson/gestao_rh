@@ -23,5 +23,6 @@
 
 {% for documento in object.documento_set.all %}
     <a href="{{ documento.arquivo.url }} "> {{ documento.descricao }} </a><br>
+
 {% endfor %}
 {% endblock %}
